@@ -1,19 +1,33 @@
 ﻿<Properties StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Controllers/WeatherForecastController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Controllers/EmployeeController.cs">
     <Files>
-      <File FileName="UserManagement/Controllers/WeatherForecastController.cs" Line="34" Column="1" />
+      <File FileName="UserManagement/Controllers/WeatherForecastController.cs" Line="12" Column="24" />
+      <File FileName="UserManagement/Models/EmptyClass.cs" Line="18" Column="1" />
+      <File FileName="UserManagement/Models/Employee.cs" Line="21" Column="1" />
+      <File FileName="UserManagement/Models/Site.cs" Line="13" Column="29" />
+      <File FileName="UserManagement/appsettings.json" Line="5" Column="15" />
+      <File FileName="UserManagement/Controllers/EmployeeController.cs" Line="13" Column="49" />
+      <File FileName="UserManagement/Properties/launchSettings.json" Line="3" Column="19" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="UserManagement" expanded="True" />
+          <Node name="UserManagement" expanded="True">
+            <Node name="UserManagement" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="EmployeeController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Properties" expanded="True" />
+            </Node>
+          </Node>
         </State>
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">

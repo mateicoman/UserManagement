@@ -14,8 +14,14 @@
   <ItemGroup>
     <None Remove="Models\" />
     <None Remove="MongoDB.Driver" />
+    <None Remove="Services\" />
+    <None Remove="Interfaces\" />
+    <None Remove="Photos\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="Interfaces\" />
+    <Folder Include="Photos\" />
   </ItemGroup>
 </Project>

@@ -13,34 +13,24 @@ namespace UserManagement.Controllers
     public class EmployeeController : Controller
     {
         [HttpGet]
-        public async Task<IEnumerable<string>> Get()
-        {
+        public async Task<IEnumerable<string>> Get() =>
             throw new NotImplementedException();
-        }
 
         [HttpGet("{id}")]
-        public Task<Employee> GetEmployeeById(int id)
-        {
+        public Task<Employee> GetEmployeeById(int id) =>
             throw new NotImplementedException();
-        }
 
         [HttpPost]
-        public void CreateEmployee(Employee employee)
-        {
+        public void CreateEmployee(Employee employee) =>
             throw new NotImplementedException();
-        }
 
         [HttpPut("{id}")]
-        public void UpdateEmployee(int id, Employee employee)
-        {
+        public void UpdateEmployee(int id, Employee employee) =>
             throw new NotImplementedException();
-        }
 
         [HttpDelete("{id}")]
-        public void DeleteEmployee(int id)
-        {
+        public void DeleteEmployee(int id) =>
             throw new NotImplementedException();
-        }
     }
 }
 

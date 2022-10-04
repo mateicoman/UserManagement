@@ -1,6 +1,16 @@
 ﻿using Microsoft.Extensions.FileProviders;
+using UserManagement.Interfaces;
+using UserManagement.Models;
+using UserManagement.Repositories;
+using UserManagement.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Configure<UserManagementDatabaseSettings>(
+    builder.Configuration.GetSection("UserManagementDatabase"));
+
+builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
+builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
 
 // Add services to the container.
 builder.Services.AddCors(c =>

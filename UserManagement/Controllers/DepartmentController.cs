@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using UserManagement.Interfaces;
 using UserManagement.Models;
 
 namespace UserManagement.Controllers;
@@ -8,40 +9,44 @@ namespace UserManagement.Controllers;
 public class DepartmentController : ControllerBase
 {
     private readonly ILogger<DepartmentController> _logger;
+    private readonly IDepartmentService _departmentService;
 
-    public DepartmentController(ILogger<DepartmentController> logger)
+    public DepartmentController(ILogger<DepartmentController> logger, IDepartmentService departmentService)
     {
         _logger = logger;
+        _departmentService = departmentService;
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Department>> Get()
-    {
-        throw new NotImplementedException();
-    }
+    public async Task<IEnumerable<Department>> GetAll() =>
+            await _departmentService.GetAll();
 
-    [HttpGet("{id}")]
-    public async Task<IEnumerable<Department>> GetDepartmentById(int departmentId)
+    [HttpGet("{departmentId}")]
+    public async Task<ActionResult<Department>> GetDepartmentById(string departmentId)
     {
-        throw new NotImplementedException();
+        if (departmentId is null)
+        {
+            return BadRequest();
+        }
+        var department = await _departmentService.GetDepartmentById(departmentId);
+        if (department is null)
+        {
+            return NotFound();
+        }
+        return department;
     }
-
     [HttpPost]
-    public async Task<IEnumerable<Department>> CreateDepartment(Department department)
+    public async Task<IActionResult> CreateDepartment(Department department)
     {
-        throw new NotImplementedException();
+        await _departmentService.CreateDepartment(department);
+        return CreatedAtAction(nameof(GetDepartmentById), new { departmentId = department.Id }, department);
     }
+    [HttpPut("{departmentId}")]
+    public async Task UpdateDepartment(string departmentId, Department department) =>
+            await _departmentService.UpdateDepartment(departmentId, department);
 
-    [HttpPut("{id}")]
-    public async Task<IEnumerable<Department>> UpdateDepartment(int departmentId, Department department)
-    {
-        throw new NotImplementedException();
-    }
-
-    [HttpDelete("{id}")]
-    public async Task<IEnumerable<Department>> DeleteDepartment(int departmentId)
-    {
-        throw new NotImplementedException();
-    }
+    [HttpDelete("{departmentId}")]
+    public async Task DeleteDepartment(string departmentId) =>
+            await _departmentService.DeleteDepartment(departmentId);
 }
 

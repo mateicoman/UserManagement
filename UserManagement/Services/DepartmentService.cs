@@ -21,9 +21,16 @@ namespace UserManagement.Services
         public async Task<IEnumerable<Department>> GetAll() =>
             await _departmentRepository.GetAll();
 
-        public async Task<Department> GetDepartmentById(string departmentId) =>
-                await _departmentRepository.GetDepartmentById(departmentId);
+        public async Task<Department> GetDepartmentById(string departmentId)
+        {
+            if (departmentId is null)
+            {
+                throw new BadHttpRequestException("Department Id is missing!");
+            }
+            var department = await _departmentRepository.GetDepartmentById(departmentId);
 
+            return department;
+        }
         public async Task CreateDepartment(Department department) =>
                 await _departmentRepository.CreateDepartment(department);
 

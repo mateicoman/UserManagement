@@ -22,19 +22,8 @@ public class DepartmentController : ControllerBase
             await _departmentService.GetAll();
 
     [HttpGet("{departmentId}")]
-    public async Task<ActionResult<Department>> GetDepartmentById(string departmentId)
-    {
-        if (departmentId is null)
-        {
-            return BadRequest();
-        }
-        var department = await _departmentService.GetDepartmentById(departmentId);
-        if (department is null)
-        {
-            return NotFound();
-        }
-        return department;
-    }
+    public async Task<ActionResult<Department>> GetDepartmentById(string departmentId) =>
+        await _departmentService.GetDepartmentById(departmentId);
     [HttpPost]
     public async Task<IActionResult> CreateDepartment(Department department)
     {

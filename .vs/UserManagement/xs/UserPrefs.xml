@@ -1,30 +1,27 @@
 ﻿<Properties StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Repositories/DepartmentRepository.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Program.cs">
     <Files>
       <File FileName="UserManagement/Models/Employee.cs" Line="4" Column="1" />
       <File FileName="UserManagement/Models/Site.cs" Line="13" Column="29" />
-      <File FileName="UserManagement/appsettings.json" Line="5" Column="15" />
-      <File FileName="UserManagement/Controllers/EmployeeController.cs" Line="33" Column="49" />
-      <File FileName="UserManagement/Controllers/SiteController.cs" Line="17" Column="49" />
-      <File FileName="UserManagement/Controllers/DepartmentController.cs" Line="38" Column="49" />
-      <File FileName="UserManagement/Services/DepartmentService.cs" Line="12" Column="2" />
-      <File FileName="UserManagement/Interfaces/DepartmentInterface.cs" Line="12" Column="74" />
-      <File FileName="UserManagement/Repositories/DepartmentRepository.cs" Line="10" Column="1" />
+      <File FileName="UserManagement/Controllers/DepartmentController.cs" Line="30" Column="46" />
+      <File FileName="UserManagement/Services/DepartmentService.cs" Line="32" Column="31" />
+      <File FileName="UserManagement/Repositories/DepartmentRepository.cs" Line="35" Column="72" />
+      <File FileName="UserManagement/Models/UserManagementDatabaseSettings.cs" Line="5" Column="6" />
+      <File FileName="UserManagement/Models/Department.cs" Line="1" Column="1" />
+      <File FileName="UserManagement/Interfaces/IDepartmentService.cs" Line="8" Column="39" />
+      <File FileName="UserManagement/Program.cs" Line="49" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UserManagement" expanded="True">
             <Node name="UserManagement" expanded="True">
-              <Node name="Repositories" expanded="True">
-                <Node name="DepartmentRepository.cs" selected="True" />
-              </Node>
+              <Node name="Controllers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Repositories" expanded="True" />
               <Node name="Services" expanded="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -34,6 +31,11 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

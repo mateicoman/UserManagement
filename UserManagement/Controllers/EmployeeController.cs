@@ -10,7 +10,7 @@ using UserManagement.Models;
 namespace UserManagement.Controllers
 {
     [Route("api/[controller]")]
-    public class EmployeeController : Controller
+    public class EmployeeController : ControllerBase
     {
         [HttpGet]
         public async Task<IEnumerable<string>> Get() =>

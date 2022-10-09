@@ -8,10 +8,10 @@ namespace UserManagement.Controllers;
 [Route("[controller]")]
 public class DepartmentController : ControllerBase
 {
-    private readonly ILogger<DepartmentController> _logger;
+    private readonly ILogger<SiteController> _logger;
     private readonly IDepartmentService _departmentService;
 
-    public DepartmentController(ILogger<DepartmentController> logger, IDepartmentService departmentService)
+    public DepartmentController(ILogger<SiteController> logger, IDepartmentService departmentService)
     {
         _logger = logger;
         _departmentService = departmentService;

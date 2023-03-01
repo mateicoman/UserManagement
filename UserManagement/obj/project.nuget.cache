@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "81KokyMfGO4b2+953lgFteqb+VpjXhjaVJayxkQWdiHKYWG1TBTpIyKqvtGXCciIt6eiIohH2P53UffzTjHg5g==",
+  "dgSpecHash": "ikcP8GG/0pBfCyjhBfcybIV+JQAP+3hsEujg8F7X0D7PJrzqY/8g7Fyx4o5z5+X9wwfDOhbzZSKNelh2RMzqvA==",
   "success": true,
   "projectFilePath": "/Users/mateicoman/Repos/UserManagement/UserManagement/UserManagement.csproj",
   "expectedPackageFiles": [
+    "/Users/mateicoman/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/dnsclient/1.6.1/dnsclient.1.6.1.nupkg.sha512",
+    "/Users/mateicoman/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/microsoft.netcore.platforms/5.0.0/microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "/Users/mateicoman/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",

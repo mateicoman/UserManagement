@@ -41,3 +41,9 @@
 /Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/runtimes/linux/native/libmongocrypt.so
 /Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/runtimes/osx/native/libmongocrypt.dylib
 /Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/runtimes/win/native/mongocrypt.dll
+/Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets/msbuild.UserManagement.Microsoft.AspNetCore.StaticWebAssets.props
+/Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets/msbuild.build.UserManagement.props
+/Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets/msbuild.buildMultiTargeting.UserManagement.props
+/Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.UserManagement.props
+/Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets.pack.json
+/Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/AutoMapper.dll

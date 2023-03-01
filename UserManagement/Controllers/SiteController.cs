@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UserManagement.Interfaces;
 using UserManagement.Models;
+using UserManagement.Models.Requests;
 
 namespace UserManagement.Controllers;
 
@@ -26,14 +27,14 @@ public class SiteController : ControllerBase
         await _siteService.GetSiteById(siteId);
 
     [HttpPost]
-    public async Task<IActionResult> CreateSite(Site site)
+    public async Task<IActionResult> CreateSite(CreateSiteRequest request)
     {
-        await _siteService.CreateSite(site);
+        await _siteService.CreateSite(request);
         return Ok(new { message = "Site created" });
     }
     [HttpPut("{siteId}")]
-    public async Task UpdateSite(string siteId, Site site) =>
-            await _siteService.UpdateSite(siteId, site);
+    public async Task UpdateSite(string siteId, UpdateDepartmentRequest request) =>
+            await _siteService.UpdateSite(siteId, request);
 
     [HttpDelete("{siteId}")]
     public async Task DeleteSite(string siteId) =>

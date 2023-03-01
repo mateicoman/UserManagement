@@ -1,5 +1,6 @@
 ﻿using System;
 using UserManagement.Models;
+using UserManagement.Models.Requests;
 
 namespace UserManagement.Interfaces
 {
@@ -7,8 +8,8 @@ namespace UserManagement.Interfaces
     {
         Task<IEnumerable<Site>> GetAll();
         Task<Site> GetSiteById(string siteId);
-        Task CreateSite(Site site);
-        Task UpdateSite(string siteId, Site site);
+        Task CreateSite(CreateSiteRequest site);
+        Task UpdateSite(string siteId, UpdateSiteRequest site);
         Task DeleteSite(string siteId);
     }
 }

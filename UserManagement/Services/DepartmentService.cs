@@ -1,10 +1,4 @@
-﻿using System;
-using AutoMapper;
-using UserManagement.Interfaces;
-using UserManagement.Models;
-using UserManagement.Models.Requests;
-
-namespace UserManagement.Services
+﻿namespace UserManagement.Services
 {
     public class DepartmentService: IDepartmentService
     {

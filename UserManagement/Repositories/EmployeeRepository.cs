@@ -1,16 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using MongoDB.Driver;
-using UserManagement.Interfaces;
-using UserManagement.Models;
-
-namespace UserManagement.Repositories
+﻿namespace UserManagement.Repositories
 {
     public class EmployeeRepository: IEmployeeRepository
     {

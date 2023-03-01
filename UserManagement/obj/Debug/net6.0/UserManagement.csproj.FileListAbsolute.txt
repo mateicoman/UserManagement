@@ -47,3 +47,4 @@
 /Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets/msbuild.buildTransitive.UserManagement.props
 /Users/mateicoman/Repos/UserManagement/UserManagement/obj/Debug/net6.0/staticwebassets.pack.json
 /Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/AutoMapper.dll
+/Users/mateicoman/Repos/UserManagement/UserManagement/bin/Debug/net6.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

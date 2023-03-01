@@ -13,8 +13,8 @@ namespace UserManagement.Models
         public string? Surname { get; init; }
         public string? Username { get; init; }
         public string? Email { get; init; }
-        public int DepartmentId { get; init; }
-        public int SiteId { get; init; }
+        public string? DepartmentId { get; init; }
+        public string? SiteId { get; init; }
         public string? PhotoFileName { get; set; }
     }
 }

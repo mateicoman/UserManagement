@@ -15,6 +15,7 @@ builder.Services.AddSingleton<ISiteService, SiteService>();
 builder.Services.AddSingleton<ISiteRepository, SiteRepository>();
 builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
 builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.
 builder.Services.AddCors(c =>

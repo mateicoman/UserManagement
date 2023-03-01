@@ -33,7 +33,7 @@ public class SiteController : ControllerBase
         return Ok(new { message = "Site created" });
     }
     [HttpPut("{siteId}")]
-    public async Task UpdateSite(string siteId, UpdateDepartmentRequest request) =>
+    public async Task UpdateSite(string siteId, UpdateSiteRequest request) =>
             await _siteService.UpdateSite(siteId, request);
 
     [HttpDelete("{siteId}")]

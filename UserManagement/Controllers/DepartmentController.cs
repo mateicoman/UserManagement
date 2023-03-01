@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using UserManagement.Interfaces;
 using UserManagement.Models;
+using UserManagement.Models.Requests;
 
 namespace UserManagement.Controllers;
 
@@ -25,13 +26,13 @@ public class DepartmentController : ControllerBase
     public async Task<ActionResult<Department>> GetDepartmentById(string departmentId) =>
         await _departmentService.GetDepartmentById(departmentId);
     [HttpPost]
-    public async Task<IActionResult> CreateDepartment(Department department)
+    public async Task<IActionResult> CreateDepartment(CreateDepartmentRequest department)
     {
         await _departmentService.CreateDepartment(department);
-        return CreatedAtAction(nameof(GetDepartmentById), new { departmentId = department.Id }, department);
+        return Ok(new { message = "User created" });
     }
     [HttpPut("{departmentId}")]
-    public async Task UpdateDepartment(string departmentId, Department department) =>
+    public async Task UpdateDepartment(string departmentId, UpdateDepartmentRequest department) =>
             await _departmentService.UpdateDepartment(departmentId, department);
 
     [HttpDelete("{departmentId}")]

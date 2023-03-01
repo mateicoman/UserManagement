@@ -24,11 +24,12 @@ public class SiteController : ControllerBase
     [HttpGet("{siteId}")]
     public async Task<ActionResult<Site>> GetSiteById(string siteId) =>
         await _siteService.GetSiteById(siteId);
+
     [HttpPost]
     public async Task<IActionResult> CreateSite(Site site)
     {
         await _siteService.CreateSite(site);
-        return CreatedAtAction(nameof(GetSiteById), new { departmentId = site.Id }, site);
+        return Ok(new { message = "Site created" });
     }
     [HttpPut("{siteId}")]
     public async Task UpdateSite(string siteId, Site site) =>

@@ -50,7 +50,7 @@
             {
                 throw new BadHttpRequestException("Department Id is missing!");
             }
-            var department = await GetDepartmentById(departmentId);
+            var department = await _departmentRepository.GetDepartmentById(departmentId);
 
             if (department is null)
             {

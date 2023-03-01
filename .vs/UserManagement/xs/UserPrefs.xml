@@ -1,18 +1,33 @@
-﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <Breakpoint file="/Users/mateicoman/Repos/UserManagement/UserManagement/Controllers/DepartmentController.cs" relfile="UserManagement/Controllers/DepartmentController.cs" line="22" column="1" />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+﻿<Properties StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default" GitUserInfo="UsingMD">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Services/DepartmentService.cs">
+    <Files>
+      <File FileName="UserManagement/Services/DepartmentService.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UserManagement" expanded="True">
+            <Node name="UserManagement" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="Helpers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True">
+                <Node name="Requests" expanded="True" />
+              </Node>
+              <Node name="Repositories" expanded="True" />
+              <Node name="Services" expanded="True">
+                <Node name="DepartmentService.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Controllers/DepartmentController.cs">
-    <Files>
-      <File FileName="UserManagement/Controllers/DepartmentController.cs" Line="22" Column="47" />
-      <File FileName="UserManagement/Services/DepartmentService.cs" />
-      <File FileName="UserManagement/Repositories/DepartmentRepository.cs" />
-      <File FileName="UserManagement/appsettings.json" />
-      <File FileName="UserManagement/Program.cs" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.UserManagement.Tests.Unit FirstBuild="True" />
 </Properties>

@@ -11,10 +11,10 @@
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Department>> GetAll() =>
+        public async Task<IEnumerable<DepartmentModel>> GetAll() =>
             await _departmentRepository.GetAll();
 
-        public async Task<Department> GetDepartmentById(string departmentId)
+        public async Task<DepartmentModel> GetDepartmentById(string departmentId)
         {
             return await CheckDepartmentIdIsValidAndReturnIt(departmentId);
         }
@@ -24,7 +24,7 @@
             if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
-            var department = _mapper.Map<Department>(request);
+            var department = _mapper.Map<DepartmentModel>(request);
             await _departmentRepository.CreateDepartment(department);
         }
 
@@ -34,7 +34,7 @@
             if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
-            var department = _mapper.Map<Department>(request);
+            var department = _mapper.Map<DepartmentModel>(request);
             await _departmentRepository.UpdateDepartment(departmentId, department);
         }
 
@@ -44,7 +44,7 @@
             await _departmentRepository.DeleteDepartment(departmentId);
         }
 
-        private async Task<Department> CheckDepartmentIdIsValidAndReturnIt(string departmentId)
+        private async Task<DepartmentModel> CheckDepartmentIdIsValidAndReturnIt(string departmentId)
         {
             if (departmentId is null)
             {

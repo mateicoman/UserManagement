@@ -2,7 +2,7 @@
 {
     public class SiteRepository: ISiteRepository
     {
-        private readonly IMongoCollection<Site> _siteCollection;
+        private readonly IMongoCollection<SiteModel> _siteCollection;
 
         public SiteRepository(IOptions<UserManagementDatabaseSettings> databaseSettings)
         {
@@ -11,22 +11,22 @@
             var mongoDatabase = mongoClient.GetDatabase(
                 databaseSettings.Value.DatabaseName);
 
-            _siteCollection = mongoDatabase.GetCollection<Site>("Site");
+            _siteCollection = mongoDatabase.GetCollection<SiteModel>("Site");
         }
-        public async Task<IEnumerable<Site>> GetAll() =>
+        public async Task<IEnumerable<SiteModel>> GetAll() =>
             await _siteCollection.Find(_ => true).ToListAsync();
 
-        public async Task<Site> GetSiteById(string siteId) =>
+        public async Task<SiteModel> GetSiteById(string siteId) =>
                 await _siteCollection.Find(item => item.Id == siteId).FirstOrDefaultAsync();
 
-        public async Task CreateSite(Site site) =>
+        public async Task CreateSite(SiteModel site) =>
                 await _siteCollection.InsertOneAsync(site);
 
-        public async Task UpdateSite(string siteId, Site site) =>
-                await _siteCollection.ReplaceOneAsync<Site>(item => item.Id == siteId, site);
+        public async Task UpdateSite(string siteId, SiteModel site) =>
+                await _siteCollection.ReplaceOneAsync<SiteModel>(item => item.Id == siteId, site);
 
         public async Task DeleteSite(string siteId) =>
-                await _siteCollection.DeleteOneAsync<Site>(item => item.Id == siteId);
+                await _siteCollection.DeleteOneAsync<SiteModel>(item => item.Id == siteId);
     }
 }
 

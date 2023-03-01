@@ -10,10 +10,10 @@
             _siteRepository = siteRepository;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<Site>> GetAll() =>
+        public async Task<IEnumerable<SiteModel>> GetAll() =>
             await _siteRepository.GetAll();
 
-        public async Task<Site> GetSiteById(string siteId)
+        public async Task<SiteModel> GetSiteById(string siteId)
         {
             return await CheckSiteIdIsValidAndReturnIt(siteId);
         }
@@ -23,7 +23,7 @@
             if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
-            var site = _mapper.Map<Site>(request);
+            var site = _mapper.Map<SiteModel>(request);
             await _siteRepository.CreateSite(site);
         }
 
@@ -33,7 +33,7 @@
             if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
-            var site = _mapper.Map<Site>(request);
+            var site = _mapper.Map<SiteModel>(request);
             await _siteRepository.UpdateSite(siteId, site);
         }
 
@@ -43,7 +43,7 @@
             await _siteRepository.DeleteSite(siteId);
         }
 
-        private async Task<Site> CheckSiteIdIsValidAndReturnIt(string siteId)
+        private async Task<SiteModel> CheckSiteIdIsValidAndReturnIt(string siteId)
         {
             if (siteId is null)
             {

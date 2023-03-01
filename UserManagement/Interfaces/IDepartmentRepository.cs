@@ -5,10 +5,10 @@ namespace UserManagement.Interfaces
 {
     public interface IDepartmentRepository
     {
-        Task<IEnumerable<Department>> GetAll();
-        Task<Department> GetDepartmentById(string departmentId);
-        Task CreateDepartment(Department department);
-        Task UpdateDepartment(string departmentId, Department department);
+        Task<IEnumerable<DepartmentModel>> GetAll();
+        Task<DepartmentModel> GetDepartmentById(string departmentId);
+        Task CreateDepartment(DepartmentModel department);
+        Task UpdateDepartment(string departmentId, DepartmentModel department);
         Task DeleteDepartment(string departmentId);
     }
 }

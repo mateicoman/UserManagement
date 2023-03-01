@@ -14,11 +14,11 @@ public class DepartmentController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Department>> GetAll() =>
+    public async Task<IEnumerable<DepartmentModel>> GetAll() =>
             await _departmentService.GetAll();
 
     [HttpGet("{departmentId}")]
-    public async Task<Department> GetDepartmentById(string departmentId) =>
+    public async Task<DepartmentModel> GetDepartmentById(string departmentId) =>
         await _departmentService.GetDepartmentById(departmentId);
     [HttpPost]
     public async Task<IActionResult> CreateDepartment(CreateDepartmentRequest department)

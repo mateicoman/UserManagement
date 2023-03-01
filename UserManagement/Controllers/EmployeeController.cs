@@ -12,11 +12,11 @@ public class EmployeeController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Employee>> GetAll() =>
+    public async Task<IEnumerable<EmployeeModel>> GetAll() =>
         await _employeeService.GetAll();
 
     [HttpGet("{employeeId}")]
-    public async Task<Employee> GetEmployeeById(string employeeId) =>
+    public async Task<EmployeeModel> GetEmployeeById(string employeeId) =>
         await _employeeService.GetEmployeeById(employeeId);
 
     [HttpPost]

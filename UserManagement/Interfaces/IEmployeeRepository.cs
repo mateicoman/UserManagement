@@ -5,10 +5,10 @@ namespace UserManagement.Interfaces
 {
     public interface IEmployeeRepository
     {
-        Task<IEnumerable<Employee>> GetAll();
-        Task<Employee> GetEmployeeById(string employeeId);
-        Task CreateEmployee(Employee employee);
-        Task UpdateEmployee(string employeeId, Employee employee);
+        Task<IEnumerable<EmployeeModel>> GetAll();
+        Task<EmployeeModel> GetEmployeeById(string employeeId);
+        Task CreateEmployee(EmployeeModel employee);
+        Task UpdateEmployee(string employeeId, EmployeeModel employee);
         Task DeleteEmployee(string employeeId);
     }
 }

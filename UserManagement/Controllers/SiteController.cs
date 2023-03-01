@@ -14,11 +14,11 @@ public class SiteController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<Site>> GetAll() =>
+    public async Task<IEnumerable<SiteModel>> GetAll() =>
             await _siteService.GetAll();
 
     [HttpGet("{siteId}")]
-    public async Task<Site> GetSiteById(string siteId) =>
+    public async Task<SiteModel> GetSiteById(string siteId) =>
         await _siteService.GetSiteById(siteId);
 
     [HttpPost]

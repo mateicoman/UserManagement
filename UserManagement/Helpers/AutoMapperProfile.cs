@@ -9,11 +9,11 @@ namespace UserManagement.Helpers
 	{
 		public AutoMapperProfile()
 		{
-			CreateMap<CreateDepartmentRequest, Department>();
-            CreateMap<CreateSiteRequest, Site>();
-            CreateMap<CreateEmployeeRequest, Employee>();
+			CreateMap<CreateDepartmentRequest, DepartmentModel>();
+            CreateMap<CreateSiteRequest, SiteModel>();
+            CreateMap<CreateEmployeeRequest, EmployeeModel>();
 
-			CreateMap<UpdateDepartmentRequest, Department>()
+			CreateMap<UpdateDepartmentRequest, DepartmentModel>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{
@@ -23,7 +23,7 @@ namespace UserManagement.Helpers
 						return true;
 					}
 				));
-			CreateMap<UpdateSiteRequest, Site>()
+			CreateMap<UpdateSiteRequest, SiteModel>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{
@@ -33,7 +33,7 @@ namespace UserManagement.Helpers
 						return true;
 					}
 				));
-			CreateMap<UpdateEmployeeRequest, Employee>()
+			CreateMap<UpdateEmployeeRequest, EmployeeModel>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{

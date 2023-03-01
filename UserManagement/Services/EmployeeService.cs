@@ -10,10 +10,10 @@
             _employeeRepository = employeeRepository;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<Employee>> GetAll() =>
+        public async Task<IEnumerable<EmployeeModel>> GetAll() =>
             await _employeeRepository.GetAll();
 
-        public async Task<Employee> GetEmployeeById(string employeeId)
+        public async Task<EmployeeModel> GetEmployeeById(string employeeId)
         {
             return await CheckEmployeeIdIsValidAndReturnEmployee(employeeId);
         }
@@ -25,7 +25,7 @@
             if (EmployeeEmailIsNotUnique(request.Email))
                 throw new Exception("Employee email is not unique");
 
-            var employee = _mapper.Map<Employee>(request);
+            var employee = _mapper.Map<EmployeeModel>(request);
             await _employeeRepository.CreateEmployee(employee);
         }
 
@@ -38,7 +38,7 @@
             if (EmployeeEmailIsNotUnique(request.Email))
                 throw new Exception("Employee email is not unique");
 
-            var employee = _mapper.Map<Employee>(request);
+            var employee = _mapper.Map<EmployeeModel>(request);
             await _employeeRepository.UpdateEmployee(employeeId, employee);
         }
 
@@ -49,7 +49,7 @@
         }
                 
 
-        private async Task<Employee> CheckEmployeeIdIsValidAndReturnEmployee(string employeeId)
+        private async Task<EmployeeModel> CheckEmployeeIdIsValidAndReturnEmployee(string employeeId)
         {
             if (employeeId is null)
                 throw new BadHttpRequestException("Employee Id is missing");

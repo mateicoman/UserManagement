@@ -4,14 +4,13 @@ using MongoDB.Bson.Serialization.Attributes;
 
 namespace UserManagement.Models
 {
-    public record Department
+    public class SiteModel
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; init; }
 
-        [BsonElement("Name")]
-        public string? DepartmentName { get; init; }
+        public string? SiteName { get; init; }
     }
 }
 

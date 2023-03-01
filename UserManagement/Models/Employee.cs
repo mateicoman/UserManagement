@@ -12,6 +12,7 @@ namespace UserManagement.Models
         public string? Forename { get; init; }
         public string? Surname { get; init; }
         public string? Username { get; init; }
+        public string? Email { get; init; }
         public int DepartmentId { get; init; }
         public int SiteId { get; init; }
         public string? PhotoFileName { get; set; }

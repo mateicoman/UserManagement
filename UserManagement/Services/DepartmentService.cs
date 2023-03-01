@@ -60,7 +60,7 @@ namespace UserManagement.Services
             {
                 throw new BadHttpRequestException("Department Id is missing!");
             }
-            var department = await _departmentRepository.GetDepartmentById(departmentId);
+            var department = await GetDepartmentById(departmentId);
 
             if (department is null)
             {

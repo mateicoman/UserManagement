@@ -12,9 +12,9 @@ namespace UserManagement.Models.Requests
         [Required]
         public string? Username { get; init; }
         [Required]
-        public int DepartmentId { get; init; }
+        public string? DepartmentId { get; init; }
         [Required]
-        public int SiteId { get; init; }
+        public string? SiteId { get; init; }
         [Required]
         [EmailAddress]
         public string? Email { get; init; }

@@ -11,6 +11,10 @@ builder.Services.Configure<UserManagementDatabaseSettings>(
 
 builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
 builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddSingleton<ISiteService, SiteService>();
+builder.Services.AddSingleton<ISiteRepository, SiteRepository>();
+builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
+builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
 
 // Add services to the container.
 builder.Services.AddCors(c =>

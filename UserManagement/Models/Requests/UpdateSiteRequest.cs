@@ -3,10 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UserManagement.Models.Requests
 {
-	public class UpdateDepartmentRequest
+	public class UpdateSiteRequest
 	{
-		[Required]
-		public string? DepartmentName { get; init; }
+		public string? SiteName { get; init; }
 	}
 }
 

@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace UserManagement.Models.Requests
 {
-	public class CreateDepartmentRequest
+	public class CreateSiteRequest
 	{
 		[Required]
-		public string? DepartmentName { get; init; }
+		public string? SiteName { get; init; }
 	}
 }
 

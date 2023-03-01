@@ -22,16 +22,18 @@ namespace UserManagement.Services
             _departmentRepository = departmentRepository;
             _mapper = mapper;
         }
+
         public async Task<IEnumerable<Department>> GetAll() =>
             await _departmentRepository.GetAll();
 
         public async Task<Department> GetDepartmentById(string departmentId)
         {
-            return await CheckIfDepartmentIdIsValidAndReturnIt(departmentId);
+            return await CheckDepartmentIdIsValidAndReturnIt(departmentId);
         }
+
         public async Task CreateDepartment(CreateDepartmentRequest request)
         {
-            if (CheckThatDepartmentNameIsUnique(request))
+            if (DepartmentNameIsUnique(request))
                 throw new Exception("Department name is not unique");
 
             var department = _mapper.Map<Department>(request);
@@ -40,8 +42,8 @@ namespace UserManagement.Services
 
         public async Task UpdateDepartment(string departmentId, UpdateDepartmentRequest request)
         {
-            await CheckIfDepartmentIdIsValidAndReturnIt(departmentId);
-            if (CheckThatDepartmentNameIsUnique(request))
+            await CheckDepartmentIdIsValidAndReturnIt(departmentId);
+            if (DepartmentNameIsUnique(request))
                 throw new Exception("Department name is not unique");
 
             var department = _mapper.Map<Department>(request);
@@ -50,11 +52,11 @@ namespace UserManagement.Services
 
         public async Task DeleteDepartment(string departmentId)
         {
-            await CheckIfDepartmentIdIsValidAndReturnIt(departmentId);
+            await CheckDepartmentIdIsValidAndReturnIt(departmentId);
             await _departmentRepository.DeleteDepartment(departmentId);
         }
 
-        private async Task<Department> CheckIfDepartmentIdIsValidAndReturnIt(string departmentId)
+        private async Task<Department> CheckDepartmentIdIsValidAndReturnIt(string departmentId)
         {
             if (departmentId is null)
             {
@@ -69,12 +71,12 @@ namespace UserManagement.Services
             return department;
         }
 
-        private bool CheckThatDepartmentNameIsUnique(UpdateDepartmentRequest request)
+        private bool DepartmentNameIsUnique(UpdateDepartmentRequest request)
         {
             return GetAll().Result.Any(x => x.DepartmentName == request.DepartmentName);
         }
 
-        private bool CheckThatDepartmentNameIsUnique(CreateDepartmentRequest request)
+        private bool DepartmentNameIsUnique(CreateDepartmentRequest request)
         {
             return GetAll().Result.Any(x => x.DepartmentName == request.DepartmentName);
         }

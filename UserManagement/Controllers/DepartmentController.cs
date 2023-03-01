@@ -1,9 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using UserManagement.Interfaces;
-using UserManagement.Models;
-using UserManagement.Models.Requests;
-
-namespace UserManagement.Controllers;
+﻿namespace UserManagement.Controllers;
 
 [ApiController]
 [Route("[controller]")]

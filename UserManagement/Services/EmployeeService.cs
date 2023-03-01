@@ -34,6 +34,9 @@ namespace UserManagement.Services
             if (EmployeeUsernameIsNotUnique(request.Username))
                 throw new Exception("Employee username is not unique");
 
+            if (EmployeeEmailIsNotUnique(request.Email))
+                throw new Exception("Employee email is not unique");
+
             var employee = _mapper.Map<Employee>(request);
             await _employeeRepository.CreateEmployee(employee);
         }
@@ -43,6 +46,9 @@ namespace UserManagement.Services
             await CheckEmployeeIdIsValidAndReturnEmployee(employeeId);
             if (EmployeeUsernameIsNotUnique(employeeId))
                 throw new Exception("Employee username is not unique");
+
+            if (EmployeeEmailIsNotUnique(request.Email))
+                throw new Exception("Employee email is not unique");
 
             var employee = _mapper.Map<Employee>(request);
             await _employeeRepository.UpdateEmployee(employeeId, employee);
@@ -70,6 +76,11 @@ namespace UserManagement.Services
         private bool EmployeeUsernameIsNotUnique(string? username)
         {
             return GetAll().Result.Any(x => x.Username == username);
+        }
+
+        private bool EmployeeEmailIsNotUnique(string? email)
+        {
+            return GetAll().Result.Any(x => x.Email == email);
         }
     }
 }

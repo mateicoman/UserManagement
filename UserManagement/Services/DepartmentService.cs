@@ -33,7 +33,7 @@ namespace UserManagement.Services
 
         public async Task CreateDepartment(CreateDepartmentRequest request)
         {
-            if (DepartmentNameIsUnique(request))
+            if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
             var department = _mapper.Map<Department>(request);
@@ -43,7 +43,7 @@ namespace UserManagement.Services
         public async Task UpdateDepartment(string departmentId, UpdateDepartmentRequest request)
         {
             await CheckDepartmentIdIsValidAndReturnIt(departmentId);
-            if (DepartmentNameIsUnique(request))
+            if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
             var department = _mapper.Map<Department>(request);
@@ -71,14 +71,9 @@ namespace UserManagement.Services
             return department;
         }
 
-        private bool DepartmentNameIsUnique(UpdateDepartmentRequest request)
+        private bool DepartmentNameIsNotUnique(string? name)
         {
-            return GetAll().Result.Any(x => x.DepartmentName == request.DepartmentName);
-        }
-
-        private bool DepartmentNameIsUnique(CreateDepartmentRequest request)
-        {
-            return GetAll().Result.Any(x => x.DepartmentName == request.DepartmentName);
+            return GetAll().Result.Any(x => x.DepartmentName == name);
         }
     }
 }

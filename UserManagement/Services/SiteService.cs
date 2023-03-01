@@ -33,7 +33,7 @@ namespace UserManagement.Services
 
         public async Task CreateSite(CreateSiteRequest request)
         {
-            if (SiteNameIsUnique(request))
+            if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
             var site = _mapper.Map<Site>(request);
@@ -42,15 +42,19 @@ namespace UserManagement.Services
 
         public async Task UpdateSite(string siteId, UpdateSiteRequest request)
         {
-            if (SiteNameIsUnique(request))
+            await CheckSiteIdIsValidAndReturnIt(siteId);
+            if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
             var site = _mapper.Map<Site>(request);
             await _siteRepository.UpdateSite(siteId, site);
         }
 
-        public async Task DeleteSite(string siteId) =>
-                await _siteRepository.DeleteSite(siteId);
+        public async Task DeleteSite(string siteId)
+        {
+            await CheckSiteIdIsValidAndReturnIt(siteId);
+            await _siteRepository.DeleteSite(siteId);
+        }
 
         private async Task<Site> CheckSiteIdIsValidAndReturnIt(string siteId)
         {
@@ -67,14 +71,9 @@ namespace UserManagement.Services
             return site;
         }
 
-        private bool SiteNameIsUnique(UpdateSiteRequest request)
+        private bool SiteNameIsNotUnique(string? name)
         {
-            return GetAll().Result.Any(x => x.SiteName == request.SiteName);
-        }
-
-        private bool SiteNameIsUnique(CreateSiteRequest request)
-        {
-            return GetAll().Result.Any(x => x.SiteName == request.SiteName);
+            return GetAll().Result.Any(x => x.SiteName == name);
         }
     }
 }

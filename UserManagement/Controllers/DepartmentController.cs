@@ -18,7 +18,7 @@ public class DepartmentController : ControllerBase
             await _departmentService.GetAll();
 
     [HttpGet("{departmentId}")]
-    public async Task<ActionResult<Department>> GetDepartmentById(string departmentId) =>
+    public async Task<Department> GetDepartmentById(string departmentId) =>
         await _departmentService.GetDepartmentById(departmentId);
     [HttpPost]
     public async Task<IActionResult> CreateDepartment(CreateDepartmentRequest department)

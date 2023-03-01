@@ -18,7 +18,7 @@ public class SiteController : ControllerBase
             await _siteService.GetAll();
 
     [HttpGet("{siteId}")]
-    public async Task<ActionResult<Site>> GetSiteById(string siteId) =>
+    public async Task<Site> GetSiteById(string siteId) =>
         await _siteService.GetSiteById(siteId);
 
     [HttpPost]

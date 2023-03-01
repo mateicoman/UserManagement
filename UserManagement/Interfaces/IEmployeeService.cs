@@ -1,5 +1,6 @@
 ﻿using System;
 using UserManagement.Models;
+using UserManagement.Models.Requests;
 
 namespace UserManagement.Interfaces
 {
@@ -7,8 +8,8 @@ namespace UserManagement.Interfaces
     {
         Task<IEnumerable<Employee>> GetAll();
         Task<Employee> GetEmployeeById(string employeeId);
-        Task CreateEmployee(Employee employee);
-        Task UpdateEmployee(string employeeId, Employee employee);
+        Task CreateEmployee(CreateEmployeeRequest request);
+        Task UpdateEmployee(string employeeId, UpdateEmployeeRequest request);
         Task DeleteEmployee(string employeeId);
     }
 }

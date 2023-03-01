@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using UserManagement.Interfaces;
 using UserManagement.Models;
+using UserManagement.Models.Requests;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -12,25 +14,32 @@ namespace UserManagement.Controllers
     [Route("api/[controller]")]
     public class EmployeeController : ControllerBase
     {
-        [HttpGet]
-        public async Task<IEnumerable<string>> Get() =>
-            throw new NotImplementedException();
+        private readonly IEmployeeService _employeeService;
 
-        [HttpGet("{id}")]
-        public Task<Employee> GetEmployeeById(int id) =>
-            throw new NotImplementedException();
+        public EmployeeController(IEmployeeService employeeService)
+        {
+            _employeeService = employeeService;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<Employee>> GetAll() =>
+            await _employeeService.GetAll();
+
+        [HttpGet("{employeeId}")]
+        public async Task<Employee> GetEmployeeById(string employeeId) =>
+            await _employeeService.GetEmployeeById(employeeId);
 
         [HttpPost]
-        public void CreateEmployee(Employee employee) =>
-            throw new NotImplementedException();
+        public async Task CreateEmployee(CreateEmployeeRequest request) =>
+            await _employeeService.CreateEmployee(request);
 
-        [HttpPut("{id}")]
-        public void UpdateEmployee(int id, Employee employee) =>
-            throw new NotImplementedException();
+        [HttpPut("{employeeId}")]
+        public async Task UpdateEmployee(string employeeId, UpdateEmployeeRequest request) =>
+            await _employeeService.UpdateEmployee(employeeId, request);
 
-        [HttpDelete("{id}")]
-        public void DeleteEmployee(int id) =>
-            throw new NotImplementedException();
+        [HttpDelete("{employeeId}")]
+        public async Task DeleteEmployee(string employeeId) =>
+            await _employeeService.DeleteEmployee(employeeId);
     }
 }
 

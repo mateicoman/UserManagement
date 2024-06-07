@@ -1,11 +1,10 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserManagement.Models.Requests
+namespace UserManagement.Domain.DTOs.Site
 {
-	public class CreateSiteRequest
+	public class SitePutDto
 	{
-		[Required]
 		public string? SiteName { get; init; }
 	}
 }

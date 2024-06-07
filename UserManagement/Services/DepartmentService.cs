@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Services
+﻿using UserManagement.Domain.DTOs.Department;
+
+namespace UserManagement.Services
 {
     public class DepartmentService: IDepartmentService
     {
@@ -11,30 +13,30 @@
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<DepartmentModel>> GetAll() =>
+        public async Task<IEnumerable<DepartmentDto>> GetAll() =>
             await _departmentRepository.GetAll();
 
-        public async Task<DepartmentModel> GetDepartmentById(string departmentId)
+        public async Task<DepartmentDto> GetDepartmentById(string departmentId)
         {
             return await CheckDepartmentIdIsValidAndReturnIt(departmentId);
         }
 
-        public async Task CreateDepartment(CreateDepartmentRequest request)
+        public async Task CreateDepartment(DepartmentPostDto request)
         {
             if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
-            var department = _mapper.Map<DepartmentModel>(request);
+            var department = _mapper.Map<DepartmentDto>(request);
             await _departmentRepository.CreateDepartment(department);
         }
 
-        public async Task UpdateDepartment(string departmentId, UpdateDepartmentRequest request)
+        public async Task UpdateDepartment(string departmentId, DepartmentPutDto request)
         {
             await CheckDepartmentIdIsValidAndReturnIt(departmentId);
             if (DepartmentNameIsNotUnique(request.DepartmentName))
                 throw new Exception("Department name is not unique");
 
-            var department = _mapper.Map<DepartmentModel>(request);
+            var department = _mapper.Map<DepartmentDto>(request);
             await _departmentRepository.UpdateDepartment(departmentId, department);
         }
 
@@ -44,7 +46,7 @@
             await _departmentRepository.DeleteDepartment(departmentId);
         }
 
-        private async Task<DepartmentModel> CheckDepartmentIdIsValidAndReturnIt(string departmentId)
+        private async Task<DepartmentDto> CheckDepartmentIdIsValidAndReturnIt(string departmentId)
         {
             if (departmentId is null)
             {

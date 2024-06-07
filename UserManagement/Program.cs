@@ -1,6 +1,5 @@
 ﻿using Microsoft.Extensions.FileProviders;
-using UserManagement.Interfaces;
-using UserManagement.Models;
+using UserManagement.Domain.Interfaces.Services;
 using UserManagement.Repositories;
 using UserManagement.Services;
 
@@ -9,12 +8,12 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<UserManagementDatabaseSettings>(
     builder.Configuration.GetSection("UserManagementDatabase"));
 
-builder.Services.AddSingleton<IDepartmentService, DepartmentService>();
-builder.Services.AddSingleton<IDepartmentRepository, DepartmentRepository>();
-builder.Services.AddSingleton<ISiteService, SiteService>();
-builder.Services.AddSingleton<ISiteRepository, SiteRepository>();
-builder.Services.AddSingleton<IEmployeeService, EmployeeService>();
-builder.Services.AddSingleton<IEmployeeRepository, EmployeeRepository>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+builder.Services.AddScoped<ISiteService, SiteService>();
+builder.Services.AddScoped<ISiteRepository, SiteRepository>();
+builder.Services.AddScoped<IEmployeeService, EmployeeService>();
+builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 // Add services to the container.

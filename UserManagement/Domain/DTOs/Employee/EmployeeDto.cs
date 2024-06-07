@@ -1,23 +1,20 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
-namespace UserManagement.Models.Requests
+namespace UserManagement.Domain.DTOs.Employee
 {
-	public class CreateEmployeeRequest
-	{
-        [Required]
+    public class EmployeeDto
+    {
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string? Id { get; init; }
         public string? Forename { get; init; }
-        [Required]
         public string? Surname { get; init; }
-        [Required]
         public string? Username { get; init; }
-        [Required]
-        public string? DepartmentId { get; init; }
-        [Required]
-        public string? SiteId { get; init; }
-        [Required]
-        [EmailAddress]
         public string? Email { get; init; }
+        public string? DepartmentId { get; init; }
+        public string? SiteId { get; init; }
         public string? PhotoFileName { get; set; }
     }
 }

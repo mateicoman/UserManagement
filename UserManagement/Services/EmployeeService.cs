@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Services
+﻿using UserManagement.Domain.DTOs.Employee;
+
+namespace UserManagement.Services
 {
     public class EmployeeService: IEmployeeService
     {
@@ -10,14 +12,14 @@
             _employeeRepository = employeeRepository;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<EmployeeModel>> GetAll() =>
+        public async Task<IEnumerable<EmployeeDto>> GetAll() =>
             await _employeeRepository.GetAll();
 
-        public async Task<EmployeeModel> GetEmployeeById(string employeeId)
+        public async Task<EmployeeDto> GetEmployeeById(string employeeId)
         {
             return await CheckEmployeeIdIsValidAndReturnEmployee(employeeId);
         }
-        public async Task CreateEmployee(CreateEmployeeRequest request)
+        public async Task CreateEmployee(EmployeePostDto request)
         {
             if (EmployeeUsernameIsNotUnique(request.Username))
                 throw new Exception("Employee username is not unique");
@@ -25,11 +27,11 @@
             if (EmployeeEmailIsNotUnique(request.Email))
                 throw new Exception("Employee email is not unique");
 
-            var employee = _mapper.Map<EmployeeModel>(request);
+            var employee = _mapper.Map<EmployeeDto>(request);
             await _employeeRepository.CreateEmployee(employee);
         }
 
-        public async Task UpdateEmployee(string employeeId, UpdateEmployeeRequest request)
+        public async Task UpdateEmployee(string employeeId, EmployeePutDto request)
         {
             await CheckEmployeeIdIsValidAndReturnEmployee(employeeId);
             if (EmployeeUsernameIsNotUnique(employeeId))
@@ -38,7 +40,7 @@
             if (EmployeeEmailIsNotUnique(request.Email))
                 throw new Exception("Employee email is not unique");
 
-            var employee = _mapper.Map<EmployeeModel>(request);
+            var employee = _mapper.Map<EmployeeDto>(request);
             await _employeeRepository.UpdateEmployee(employeeId, employee);
         }
 
@@ -49,7 +51,7 @@
         }
                 
 
-        private async Task<EmployeeModel> CheckEmployeeIdIsValidAndReturnEmployee(string employeeId)
+        private async Task<EmployeeDto> CheckEmployeeIdIsValidAndReturnEmployee(string employeeId)
         {
             if (employeeId is null)
                 throw new BadHttpRequestException("Employee Id is missing");

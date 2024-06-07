@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Controllers;
+﻿using UserManagement.Domain.DTOs.Site;
+
+namespace UserManagement.Controllers;
 
 [ApiController]
 [Route("[controller]")]
@@ -14,21 +16,21 @@ public class SiteController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IEnumerable<SiteModel>> GetAll() =>
+    public async Task<IEnumerable<SiteDto>> GetAll() =>
             await _siteService.GetAll();
 
     [HttpGet("{siteId}")]
-    public async Task<SiteModel> GetSiteById(string siteId) =>
+    public async Task<SiteDto> GetSiteById(string siteId) =>
         await _siteService.GetSiteById(siteId);
 
     [HttpPost]
-    public async Task<IActionResult> CreateSite(CreateSiteRequest request)
+    public async Task<IActionResult> CreateSite(SitePostDto request)
     {
         await _siteService.CreateSite(request);
         return Ok(new { message = "Site created" });
     }
     [HttpPut("{siteId}")]
-    public async Task UpdateSite(string siteId, UpdateSiteRequest request) =>
+    public async Task UpdateSite(string siteId, SitePutDto request) =>
             await _siteService.UpdateSite(siteId, request);
 
     [HttpDelete("{siteId}")]

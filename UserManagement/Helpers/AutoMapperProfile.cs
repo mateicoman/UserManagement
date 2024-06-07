@@ -1,7 +1,6 @@
-﻿using System;
-using AutoMapper;
-using UserManagement.Models;
-using UserManagement.Models.Requests;
+﻿using UserManagement.Domain.DTOs.Department;
+using UserManagement.Domain.DTOs.Employee;
+using UserManagement.Domain.DTOs.Site;
 
 namespace UserManagement.Helpers
 {
@@ -9,11 +8,11 @@ namespace UserManagement.Helpers
 	{
 		public AutoMapperProfile()
 		{
-			CreateMap<CreateDepartmentRequest, DepartmentModel>();
-            CreateMap<CreateSiteRequest, SiteModel>();
-            CreateMap<CreateEmployeeRequest, EmployeeModel>();
+			CreateMap<DepartmentPostDto, DepartmentDto>();
+            CreateMap<SitePostDto, SiteDto>();
+            CreateMap<EmployeePostDto, EmployeeDto>();
 
-			CreateMap<UpdateDepartmentRequest, DepartmentModel>()
+			CreateMap<DepartmentPutDto, DepartmentDto>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{
@@ -23,7 +22,7 @@ namespace UserManagement.Helpers
 						return true;
 					}
 				));
-			CreateMap<UpdateSiteRequest, SiteModel>()
+			CreateMap<SitePutDto, SiteDto>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{
@@ -33,7 +32,7 @@ namespace UserManagement.Helpers
 						return true;
 					}
 				));
-			CreateMap<UpdateEmployeeRequest, EmployeeModel>()
+			CreateMap<EmployeePutDto, EmployeeDto>()
 				.ForAllMembers(x => x.Condition(
 					(src, dest, prop) =>
 					{

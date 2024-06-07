@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserManagement.Models.Requests
+namespace UserManagement.Domain.DTOs.Employee
 {
-	public class UpdateEmployeeRequest
+	public class EmployeePutDto
 	{
         public string? Forename { get; init; }
         public string? Surname { get; init; }

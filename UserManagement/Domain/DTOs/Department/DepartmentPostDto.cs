@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace UserManagement.Models.Requests
+namespace UserManagement.Domain.DTOs.Department
 {
-	public class CreateDepartmentRequest
+	public class DepartmentPostDto
 	{
 		[Required]
 		public string? DepartmentName { get; init; }

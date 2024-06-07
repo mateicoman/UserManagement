@@ -2,16 +2,15 @@
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 
-namespace UserManagement.Models
+namespace UserManagement.Domain.DTOs.Site
 {
-    public record DepartmentModel
+    public class SiteDto
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string? Id { get; init; }
 
-        [BsonElement("Name")]
-        public string? DepartmentName { get; init; }
+        public string? SiteName { get; init; }
     }
 }
 

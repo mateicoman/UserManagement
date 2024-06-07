@@ -1,5 +1,5 @@
 ﻿using System;
-namespace UserManagement.Models
+namespace UserManagement.Domain
 {
     public class UserManagementDatabaseSettings
     {

@@ -1,4 +1,6 @@
-﻿namespace UserManagement.Services
+﻿using UserManagement.Domain.DTOs.Site;
+
+namespace UserManagement.Services
 {
     public class SiteService: ISiteService
     {
@@ -10,30 +12,30 @@
             _siteRepository = siteRepository;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<SiteModel>> GetAll() =>
+        public async Task<IEnumerable<SiteDto>> GetAll() =>
             await _siteRepository.GetAll();
 
-        public async Task<SiteModel> GetSiteById(string siteId)
+        public async Task<SiteDto> GetSiteById(string siteId)
         {
             return await CheckSiteIdIsValidAndReturnIt(siteId);
         }
 
-        public async Task CreateSite(CreateSiteRequest request)
+        public async Task CreateSite(SitePostDto request)
         {
             if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
-            var site = _mapper.Map<SiteModel>(request);
+            var site = _mapper.Map<SiteDto>(request);
             await _siteRepository.CreateSite(site);
         }
 
-        public async Task UpdateSite(string siteId, UpdateSiteRequest request)
+        public async Task UpdateSite(string siteId, SitePutDto request)
         {
             await CheckSiteIdIsValidAndReturnIt(siteId);
             if (SiteNameIsNotUnique(request.SiteName))
                 throw new Exception("Site name is not unique");
 
-            var site = _mapper.Map<SiteModel>(request);
+            var site = _mapper.Map<SiteDto>(request);
             await _siteRepository.UpdateSite(siteId, site);
         }
 
@@ -43,7 +45,7 @@
             await _siteRepository.DeleteSite(siteId);
         }
 
-        private async Task<SiteModel> CheckSiteIdIsValidAndReturnIt(string siteId)
+        private async Task<SiteDto> CheckSiteIdIsValidAndReturnIt(string siteId)
         {
             if (siteId is null)
             {

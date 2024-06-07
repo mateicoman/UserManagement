@@ -1,25 +1,51 @@
-﻿<Properties StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default" GitUserInfo="UsingMD">
-  <MonoDevelop.Ide.DebuggingService.Breakpoints />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="UserManagement/Services/DepartmentService.cs">
+﻿<Properties GitUserInfo="UsingMD" StartupConfiguration="{382A4C1D-BD30-4E8E-B304-BBE80A7F659A}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../usr/local/share/dotnet/sdk/7.0.316/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets">
     <Files>
-      <File FileName="UserManagement/Services/DepartmentService.cs" Line="1" Column="1" />
+      <File FileName="UserManagement.Tests.Unit/Department/GivenIHaveAGetDepartmentRequest.cs" NotebookId="1" />
+      <File FileName="UserManagement.Tests.Unit/Usings.cs" NotebookId="1" />
+      <File FileName="UserManagement/Repositories/DepartmentRepository.cs" NotebookId="1" />
+      <File FileName="UserManagement/Controllers/EmployeeController.cs" NotebookId="1" />
+      <File FileName="UserManagement/Controllers/SiteController.cs" NotebookId="1" />
+      <File FileName="UserManagement/Models/SiteModel.cs" NotebookId="1" />
+      <File FileName="UserManagement/Models/EmployeeModel.cs" NotebookId="1" />
+      <File FileName="UserManagement/Models/DepartmentModel.cs" NotebookId="1" />
+      <File FileName="UserManagement/Interfaces/IEmployeeRepository.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="UserManagement/Models/UserManagementDatabaseSettings.cs" Line="11" Column="1" NotebookId="1" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/7.0.316/Sdks/Microsoft.NET.Sdk/targets/Microsoft.NET.TargetFrameworkInference.targets" Line="138" Column="50" NotebookId="1" />
+      <File FileName=".vs/UserManagement/xs/UserPrefs.xml" Line="1" Column="1" NotebookId="1" />
+      <File FileName="UserManagement/Program.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="UserManagement/appsettings.json" Line="15" Column="1" NotebookId="1" />
+      <File FileName="UserManagement/obj/Debug/net6.0/apphost" NotebookId="1" />
+      <File FileName="../../../../usr/local/share/dotnet/sdk/7.0.316/Sdks/Microsoft.NET.Sdk/targets/Microsoft.PackageDependencyResolution.targets" Line="171" Column="39" NotebookId="1" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="1245" Y="127" Width="910" Height="928">
+        <Files>
+          <File FileName="UserManagement/Services/DepartmentService.cs" Line="35" Column="28" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UserManagement" expanded="True">
-            <Node name="UserManagement" expanded="True">
+            <Node name="UserManagement">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
               <Node name="Controllers" expanded="True" />
-              <Node name="Helpers" expanded="True" />
               <Node name="Interfaces" expanded="True" />
-              <Node name="Models" expanded="True">
-                <Node name="Requests" expanded="True" />
-              </Node>
+              <Node name="Models" expanded="True" />
               <Node name="Repositories" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="DepartmentService.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
+            </Node>
+            <Node name="UserManagement.Tests.Unit">
+              <Node name="Department" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -27,7 +53,5 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.UserManagement PreferredExecutionTarget="/Applications/Brave Browser.app" />
-  <MonoDevelop.Ide.ItemProperties.UserManagement.Tests.Unit FirstBuild="True" />
+  <MultiItemStartupConfigurations />
 </Properties>

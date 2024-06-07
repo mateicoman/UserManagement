@@ -14,20 +14,30 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="Models\" />
     <None Remove="MongoDB.Driver" />
     <None Remove="Services\" />
-    <None Remove="Interfaces\" />
     <None Remove="Photos\" />
-    <None Remove="Models\Requests\" />
     <None Remove="Helpers\" />
+    <None Remove="Domain\" />
+    <None Remove="Domain\Interfaces\" />
+    <None Remove="Domain\DTOs\" />
+    <None Remove="Domain\Interfaces\Repositories\" />
+    <None Remove="Domain\Interfaces\Services\" />
+    <None Remove="Domain\DTOs\Department\" />
+    <None Remove="Domain\DTOs\Employee\" />
+    <None Remove="Domain\DTOs\Site\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="Services\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Photos\" />
-    <Folder Include="Models\Requests\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Domain\Interfaces\" />
+    <Folder Include="Domain\DTOs\" />
+    <Folder Include="Domain\Interfaces\Repositories\" />
+    <Folder Include="Domain\Interfaces\Services\" />
+    <Folder Include="Domain\DTOs\Department\" />
+    <Folder Include="Domain\DTOs\Employee\" />
+    <Folder Include="Domain\DTOs\Site\" />
   </ItemGroup>
 </Project>

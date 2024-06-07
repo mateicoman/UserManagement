@@ -40,19 +40,15 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[12.0.1, )"
-            },
-            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
-              "target": "Package",
-              "version": "[12.0.0, )"
+              "version": "[13.0.1, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.17.1, )"
+              "version": "[2.25.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[6.6.2, )"
             }
           },
           "imports": [

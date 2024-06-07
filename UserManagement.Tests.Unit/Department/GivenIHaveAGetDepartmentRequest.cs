@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using UserManagement.Domain.DTOs.Department;
 
 namespace UserManagement.Tests.Unit.Department;
 
@@ -8,10 +9,10 @@ public class GivenIHaveAGetDepartmentRequest
     private DepartmentService _sut;
     private Mock<IDepartmentRepository> _departmentRepositoryMock;
     private Mock<IMapper> _mapperMock;
-    private readonly string _departmentIdNull = null;
+    private readonly string? _departmentIdNull;
     private readonly string _departmentIdEmpty = "";
     private readonly string _departmentId = "633702dedf4f84aa0b630c14";
-    private DepartmentModel _expectedDepartment;
+    private DepartmentDto _expectedDepartment;
 
     [SetUp]
     public void Setup()
@@ -20,7 +21,7 @@ public class GivenIHaveAGetDepartmentRequest
         _mapperMock = new Mock<IMapper>();
         _sut = new DepartmentService(_departmentRepositoryMock.Object, _mapperMock.Object);
 
-        _expectedDepartment = new DepartmentModel
+        _expectedDepartment = new DepartmentDto
         {
             Id = _departmentId,
             DepartmentName = "IT"
